@@ -19,6 +19,7 @@
             <th scope="col">Unti Price</th>
             <th scope="col">Status</th>
             <th scope="col">Action</th>
+
         </tr>
         </thead>
         <tbody>
@@ -33,12 +34,12 @@
                     <td>{{$product->quantity}}</td>
                     <td>{{$product->unit_price}}</td>
                     <td>{{$product->status}}</td>
-                    <td>{{$product->action}}</td>
+
 
                     <td>
-                        <a class="btn btn-primary" href="">View</a>
+                        <a class="btn btn-primary" href="{{route('backend.product.views',$product->id)}}">View</a>
                         <a class="btn btn-info" href="{{route('backend.product.edit',$product->id)}}">Edit</a>
-                        <a class="btn btn-danger" href="{{route('backend.product.delete',$product->id)}}">Delete</a>
+                        <a class="btn btn-danger" onclick="return confirm('Are You Sure?')" href="{{route('backend.product.delete',$product->id)}}">Delete</a>
                     </td>
                    
                 </tr>

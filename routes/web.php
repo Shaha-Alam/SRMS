@@ -52,6 +52,7 @@ use Illuminate\Support\Facades\Route;
      Route::get('/product/product-list/delete/{id}',[ProductController::class,'delete'])->name('backend.product.delete');
      Route::get('/product/product-list/edit/{id}',[ProductController::class,'edit'])->name('backend.product.edit');
      Route::put('/product/product-list/edit/{id}',[ProductController::class,'update'])->name('backend.product.update');
+     Route::get('/product/product-list/view/{id}',[ProductController::class,'details'])->name('backend.product.views');
 
     //Category route
      Route::get('/product category',[CategoryController::class,'show'])->name('category.show');

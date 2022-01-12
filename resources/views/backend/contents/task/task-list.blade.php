@@ -20,6 +20,8 @@
             <th scope="col">Start Date</th>
             <th scope="col">End Date</th>
             <th scope="col">Status</th>
+            <th scope="col">Action</th>
+
            <!-- <th scope="col">Action</th> -->
 
         </tr>

@@ -18,6 +18,7 @@
             <th scope="col">Salary</th>
             <th scope="col">Birthday Date</th>
             <th scope="col">Join Date</th>
+            <th scope="col">Join Date</th>
           
 
           </tr>

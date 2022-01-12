@@ -18,19 +18,12 @@ class CreateEmployeesTable extends Migration
             $table->integer('serial');
             $table->string('employee_image');   
             $table->string('employee_name',);
-            $table->string('email_addres');
+            $table->string('email_address');
+            $table->string('contact_number');
             $table->text('gender');
             $table->double('salary');
             $table->date('birth_date');
             $table->date('join_date');
-            
-            // $table->string('status')->default('inactive'); join_date
-            // $table->string('contact_no',11);
-            // $table->string('email_addres');
-            // $table->text('address');
-            // $table->double('salary');
-            // $table->date('birth_date');
-            // $table->string('status')->default('inactive');
             $table->timestamps();
         });
     }

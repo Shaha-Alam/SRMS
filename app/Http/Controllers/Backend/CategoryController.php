@@ -7,47 +7,45 @@ use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
-    public function show(Request $request)
-    {
-    $categorys=Category::all();
-        
-        return view('backend.contents.category.category-list',compact('categorys'));
-    }
+           public function show(Request $request)
+           {
+              $categorys=Category::all();
+              return view('backend.contents.category.category-list',compact('categorys'));
+           }
+
+            public function create()
+           {
+               return view('backend.contents.category.category-create');
+            }
 
 
-    public function create()
-    {
-        return view('backend.contents.category.category-create');
-    }
-
-
-// product category post method
+            // product category post method
    
-public function store(Request $request)
-{
+            public function store(Request $request)
+        {
 
-//dd($request->all());
-    //  $file_name = '';
-    // // step1: check request has file?
-    // if ($request->hasFile('employee_image')) {
-    //     //file is valid or not
-    //     $file = $request->file('employee_image');
-    //     if ($file->isValid()) {
-    //         //generate unique file name
-    //         $file_name = date('Ymdhms') . '.' . $file->getClientOriginalExtension();
+            //dd($request->all());
+               //  $file_name = '';
+               // // step1: check request has file?
+               // if ($request->hasFile('employee_image')) {
+               //     //file is valid or not
+               //     $file = $request->file('employee_image');
+               //     if ($file->isValid()) {
+               //         //generate unique file name
+               //         $file_name = date('Ymdhms') . '.' . $file->getClientOriginalExtension();
 
-    //         //store image into local directory
-    //         $file->storeAs('employee', $file_name);
-    //     }
+               //         //store image into local directory
+               //         $file->storeAs('employee', $file_name);
+               //     }
     
 
-        Category::create([
-            'category_name'=>$request->category_name,
-            'description'=> $request->description
-        ]);
+             Category::create([
+                'category_name'=>$request->category_name,
+                'description'=> $request->description
+             ]);
 
-         return redirect()->back()->with('success-message', 'Category Created Successfully.');
-    }
+            return redirect()->back()->with('success-message', 'Category Created Successfully.');
+        }
 
     // DELETE METHOD
     public function delete($id)
@@ -62,13 +60,14 @@ public function store(Request $request)
     {
        $categorys=Category::find($id);
     //    return redirect()->back()->with('success-message','Product Created Successfully.');
-    return view('backend.contents.category.edit-category',compact('categorys'));  
+       return view('backend.contents.category.edit-category',compact('categorys'));  
     }
 
     //UPDATE METHOD
     public function update(Request $request,$id)
-     {
-      $categorys=Category::find($id);
+      {
+        $categorys=Category::find($id);
+        
 //        $file_name=$categorys->image;
 // //              step 1: check image exist in this request.
 //                  if($request->hasFile('image'))
@@ -86,13 +85,16 @@ public function store(Request $request)
     
             $categorys->update([
                 'category_name' => $request->category_name,
-                'descripation' => $request->description,
+                'description' => $request->description,
                 
-    
-         ]);
-            return redirect()->back()->with('success-message', 'Category Created Successfully.');
-    }
-    
-
+            ]);
+                 return redirect()->back()->with('success-message', 'Category Created Successfully.');
+        }
+        
+        public function details($id)
+        {
+            $categorys=Category::find($id);
+            return view('backend.contents.category.view-category',compact('categorys'));
+        }
 }
 

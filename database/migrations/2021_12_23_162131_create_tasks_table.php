@@ -15,15 +15,6 @@ class CreateTasksTable extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
          $table->id();
-            // $table->foreignId('employee_id')->constrained()->restrictOnDelete();
-            // $table->foreignId('product_id')->constrained()->restrictOnDelete();
-            // $table->double('total_price');
-            // $table->double('target_quantity');
-            // $table->date('start_date');
-            // $table->date('end_date');
-            // $table->string('status')->default('pending');
-            // $table->timestamps();  
-           
                 $table->string('serial');
                 $table->string('employee_name');
                 $table->string('employee_email');

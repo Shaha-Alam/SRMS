@@ -37,7 +37,7 @@
 
                     <td>
                         <a class="btn btn-primary" href="">View</a>
-                        <a class="btn btn-info" href="">Edit</a>
+                        <a class="btn btn-info" href="{{route('backend.product.edit',$product->id)}}">Edit</a>
                         <a class="btn btn-danger" href="{{route('backend.product.delete',$product->id)}}">Delete</a>
                     </td>
                    

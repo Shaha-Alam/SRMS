@@ -20,23 +20,23 @@ class TaskController extends Controller
     }
 
 
-
+  //task post method
     public function store(Request $request)
     {
 
 //  dd($request->all());
-$file_name='';
-//              step 1: check image exist in this request.
-                 if($request->hasFile('image'))
-                 {
-                     // step 2: generate file name
-                     $file_name=date('Ymdhms') .'.'. $request->file('image')->getClientOriginalExtension();
+// $file_name='';
+// //              step 1: check image exist in this request.
+//                  if($request->hasFile('image'))
+//                  {
+//                      // step 2: generate file name
+//                      $file_name=date('Ymdhms') .'.'. $request->file('image')->getClientOriginalExtension();
 
-                     //step 3 : store into project directory
+//                      //step 3 : store into project directory
                  
-                     $request->file('image')->storeAs('/uploads',$file_name);
+//                      $request->file('image')->storeAs('/uploads',$file_name);
              
-              }
+//               }
         
        
             Task::create([
@@ -52,7 +52,7 @@ $file_name='';
                 'status' => $request->status
             ]);
                
-             return redirect()->back()->with('success-message', 'task Created Successfully.');
+             return redirect()->back()->with('success-message', 'Task Created Successfully.');
         }
 
         
@@ -61,42 +61,33 @@ $file_name='';
     {
        $tasks=Task::find($id);
        $tasks->delete();
-       return redirect()->back()->with('success-message','task Created Successfully.');
+       return redirect()->back()->with('success-message','Task Created Successfully.');
 
     }
+    // EDIT METHOS
     public function edit($id)
     {
        $tasks=task::find($id);
-    //    return redirect()->back()->with('success-message','task Created Successfully.');
-    return view('backend.contents.tasks.edit-task',compact('tasks'));  
+    return view('backend.contents.task.edit-task',compact('tasks'));  
     }
+    // UPDATE METHOD
     public function update(Request $request,$id)
     {
         $tasks=task::find($id);
-        if($tasks){
-       $file_name=$tasks->image;
-//              step 1: check image exist in this request.
-                 if($request->hasFile('image'))
-                 {
-                     // step 2: generate file name
-                     $file_name=date('Ymdhms') .'.'. $request->file('image')->getClientOriginalExtension();
+//         if($tasks){
+//        $file_name=$tasks->image;
+// //              step 1: check image exist in this request.
+//                  if($request->hasFile('image'))
+//                  {
+//                      // step 2: generate file name
+//                      $file_name=date('Ymdhms') .'.'. $request->file('image')->getClientOriginalExtension();
 
-                     //step 3 : store into project directory
+//                      //step 3 : store into project directory
                  
-                     $request->file('image')->storeAs('/uploads',$file_name);
+//                      $request->file('image')->storeAs('/uploads',$file_name);
              
-              }
-          
-    
-
-
-            // $request->validate([
-            //     'name' => 'required|unique:products',
-            //     'generic' => 'required',
-            //     'category_id' => 'required',
-            //     'quantity' => 'required|gt:0',
-            //     'unit_price' => 'required|gt:0'
-            // ]);
+//               }
+        
     
             $tasks->update([
                 'serial' => $request->serial,
@@ -108,16 +99,7 @@ $file_name='';
                 'target_quantity' => $request->target_quantity,
                 'start_date' => $request->start_date,
                 'end_date' => $request->end_date,
-                'status' => $request->status
-            // $products->update([
-            //     'serial' => $request->serial,
-            //     'name' => $request->name,
-            //     'generic' => $request->generic,
-            //     'category' => $request->category,
-            //     'image' => $file_name,
-            //     'quantity' => $request->quantity,
-            //     'unit_price' => $request->unit_price,
-            //     'status' => $request->status,
+                'status' => $request->status,
          ]);
             return redirect()->route('backend.show')->with('success-message', 'task Created Successfully.');
     }
@@ -126,7 +108,7 @@ $file_name='';
 
 
 
-    }
+    
     
 
 

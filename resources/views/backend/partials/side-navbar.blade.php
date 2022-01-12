@@ -4,7 +4,7 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="images/download.JPG" width="48" height="48" alt="User" />
+                    <img src="{{url('/images/download.JPG')}}" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shaha-Alam</div>
@@ -18,7 +18,7 @@
                             <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="{{route('backend.logout')}}"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                     </li>
 
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
+                        <a href="javascript:void(0);">
                             <i class="material-icons">perm_media</i>
 
                             <span> Reports </span>
@@ -115,23 +115,7 @@
                             <i class="material-icons">pie_chart</i>
                             <span>Charts</span>
                         </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="pages/charts/morris.html">Morris</a>
-                            </li>
-                            <li>
-                                <a href="pages/charts/flot.html">Flot</a>
-                            </li>
-                            <li>
-                                <a href="pages/charts/chartjs.html">ChartJS</a>
-                            </li>
-                            <li>
-                                <a href="pages/charts/sparkline.html">Sparkline</a>
-                            </li>
-                            <li>
-                                <a href="pages/charts/jquery-knob.html">Jquery Knob</a>
-                            </li>
-                        </ul>
+                        
                     </li>
                     <li>
                         

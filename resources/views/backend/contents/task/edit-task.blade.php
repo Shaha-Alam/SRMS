@@ -47,7 +47,7 @@
     
     <div class="mb-3 form-group">
       <label for="validationCustom05">Target Quantity</label>
-      <input type="text" name="target_quantity" class="form-control" id="validationCustom05" value="{{$tasks->ttarget_quantity}}" placeholder="5BDT">
+      <input type="text" name="target_quantity" class="form-control" id="validationCustom05" value="{{$tasks->target_quantity}}" placeholder="5BDT">
     </div>
 
     <div class="mb-3 form-group">

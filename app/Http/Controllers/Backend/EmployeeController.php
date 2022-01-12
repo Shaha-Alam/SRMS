@@ -20,31 +20,32 @@ class EmployeeController extends Controller
     }
 
 
-
+    // product category post method
     public function store(Request $request)
     {
 
 
-//  dd($request->all());
+// //  dd($request->all());
 $file_name='';
                 //step 1: check image exist in this request.
-                 if($request->hasFile('image'))
+                 if($request->hasFile('employee_image'))
                  {
                      // step 2: generate file name
-                     $file_name=date('Ymdhms') .'.'. $request->file('image')->getClientOriginalExtension();
+                     $file_name=date('Ymdhms') .'.'. $request->file('employee_image')->getClientOriginalExtension();
 
                      //step 3 : store into project directory
                  
-                     $request->file('image')->storeAs('/uploads',$file_name);
+                     $request->file('employee_image')->storeAs('/uploads',$file_name);
              
               }
           
     
             Employee::create([
                 'serial' => $request->serial,
-                'employee_image' => $file->employee_image,
-                'employee_name' => $user->employee_name,
-                'email_addres' => $request->email_addres,
+                'employee_image' => $file_name,
+                'employee_name' => $request->employee_name,
+                'email_address' => $request->email_address,
+                'contact_number' => $request->contact_number,
                 'gender' => $request->gender,
                 'salary' => $request->salary,
                 'birth_date' => $request->birth_date,
@@ -67,13 +68,14 @@ $file_name='';
     {
        $employees=Employee::find($id);
     //    return redirect()->back()->with('success-message',Employee Created Successfully.');
-    return view('backend.contents.employees.edit-product',compact('employees'));  
+    return view('backend.contents.employees.edit-employee',compact('employees'));  
     }
 
     // UPDATE METHOD
     public function update(Request $request,$id)
     {
         $employees=Employee::find($id);
+        
         if($employees){
        $file_name=$employees->image;
                 //step 1: check image exist in this request.
@@ -92,17 +94,29 @@ $file_name='';
                  'serial' => $request->serial,
                  'employee_image' => $request->employee_image,
                  'employee_name' => $request->employee_name,
-                 'email_addres' => $request->email_addres,
+                 'email_address' => $request->email_address,
                  'contact_number' => $request->contact_number,
                  'gender' => $request->gender,
                  'salary' => $request->salary,
-                 'birthday_date' => $request->birthday_date,
+                 'birth_date' => $request->birth_date,
                  'join_date' => $request->join_date,
                 //  '' => $request->,
          ]);
-            return redirect()->route('backend.show')->with('success-message', 'Product Created Successfully.');
+            return redirect()->route('backend.show')->with('success-message', 'Employee Created Successfully.');
      }
     
 
 }
+
+
+
+public function view($id)
+{
+   $employees=Employee::find($id);
+//    return redirect()->back()->with('success-message',Employee Created Successfully.');
+    return view('backend.contents.employees.view-employee',compact('employees'));  
+}
+
+
+
 }

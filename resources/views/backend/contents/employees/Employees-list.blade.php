@@ -8,7 +8,7 @@
     
     <table class="table">
         <thead>
-        <tr>
+          <tr>
             <th scope="col">Serial</th>
             <th scope="col">Upload Image</th> 
             <th scope="col">Employee Name</th>
@@ -20,7 +20,7 @@
             <th scope="col">Join Date</th>
           
 
-        </tr>
+          </tr>
         </thead>
         <tbody>
 
@@ -29,24 +29,24 @@
                     <td>{{$employee->serial}}</td>
                     <td>{{$employee->employee_image}}</td>
                     <td>{{$employee->employee_name}}</td>
-                    <td>{{$employee->email_addres}}</td>
+                    <td>{{$employee->email_address}}</td>
                     <td>{{$employee->contact_number}}</td>
                     <td>{{$employee->gender}}</td>
                     <td>{{$employee->salary}}</td>
-                    <td>{{$employee->birthday_date}}</td>
+                    <td>{{$employee->birth_date}}</td>
                     <td>{{$employee->join_date}}</td>
                     <td>
-                  <a class="btn btn-primary" href="">View</a>
-                  <a class="btn btn-info" href="">Edit</a>
-                  <a class="btn btn-danger" href="{{route('backend.employee.delete',$employee->id)}}">Delete</a>
-            </td> 
+                        <a class="btn btn-primary" href="{{route('backend.employee.view',$employee->id)}}">View</a>
+                        <a class="btn btn-info" href="{{route('backend.employee.edit',$employee->id)}}">Edit</a>
+                        <a class="btn btn-danger" href="{{route('backend.employee.delete',$employee->id)}}">Delete</a>
+                   </td> 
                 </tr>
             @endforeach
         
-</tbody>
-
-
-
         </tbody>
+
+
+
+       
     </table>
 @endsection

@@ -25,19 +25,19 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-//  dd($request->all());
-$file_name='';
-//              step 1: check image exist in this request.
-                 if($request->hasFile('image'))
-                 {
-                     // step 2: generate file name
-                     $file_name=date('Ymdhms') .'.'. $request->file('image')->getClientOriginalExtension();
+// //  dd($request->all());
+// $file_name='';
+// //              step 1: check image exist in this request.
+//                  if($request->hasFile('image'))
+//                  {
+//                      // step 2: generate file name
+//                      $file_name=date('Ymdhms') .'.'. $request->file('image')->getClientOriginalExtension();
 
-                     //step 3 : store into project directory
+//                      //step 3 : store into project directory
                  
-                     $request->file('image')->storeAs('/uploads',$file_name);
+//                      $request->file('image')->storeAs('/uploads',$file_name);
              
-              }
+//               }
     
             Product::create([
                 'serial' => $request->serial,

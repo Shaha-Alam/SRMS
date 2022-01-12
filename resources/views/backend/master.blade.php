@@ -28,6 +28,11 @@
     <!-- Custom Css -->
     <link href="{{url('/css/style.css')}}" rel="stylesheet">
 
+
+
+
+
+
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{url('/css/themes/all-themes.css')}}" rel="stylesheet" />
 </head>
@@ -114,6 +119,10 @@
 
     @yield('content')
 </div>
+
+
+
+
 
     <!-- Jquery Core Js -->
     <script src="{{url('/plugins/jquery/jquery.min.js')}}"></script>

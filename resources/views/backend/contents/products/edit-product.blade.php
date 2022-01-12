@@ -5,7 +5,7 @@
 
 
 
-<form class="needs-validation" action="{{route('backend.update',$products->id)}}" method="post" enctype="multipart/form-data">
+<form class="needs-validation" action="{{route('backend.product.update',$products->id)}}" method="post" enctype="multipart/form-data">
 @csrf
 @method('put')
  
@@ -58,16 +58,7 @@
     </div>
 
     
-
   </div>
-  <!-- <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
-      <label class="form-check-label" for="invalidCheck">
-        Agree to terms and conditions
-      </label>
-    </div> -->
-
     <button type="submit">submit</button>
 
 

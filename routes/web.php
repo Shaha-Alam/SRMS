@@ -5,8 +5,8 @@ use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\TaskController;
 use App\Http\Controllers\Backend\SaleController;
 use App\Http\Controllers\Backend\CustomerController;
-//  use App\Http\Controllers\Backend\LoginController;
-//  use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Backend\LoginController;  
+use App\Http\Controllers\Backend\ReportController;
 
 // frontend
 use App\Http\Controllers\frontend\HomeController;
@@ -24,22 +24,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 // backend
-Route::get('/', function () {
-    return redirect()->route('backend');
-});
+    Route::get('backend-portal/login',[LoginController::class,'login'])->name('backend.login');
+    Route::post('backend-portal/login',[LoginController::class,'doLogin'])->name('backend.do.login');
 
-Route::group(['prefix'=>'backend-portal'],function(){
+
+    Route::group(['prefix'=>'backend-portal','middleware'=>'auth'],function(){
     Route::get('/', function () {
         return view('backend.contents.home');
     })->name('backend');
 
+    // Route::get('/', function () {
+    //     return redirect()->route('backend');
+    // });
+    Route::get('/logout',[LoginController::class,'logout'])->name('backend.logout');
 
     //Login route
     //   Route::post('/registration',[UserController::class,'registration'])->name('backend.registration');
-     Route::get('/login',[UserController::class,'login'])->name('backend.login');
-    //  Route::post('/logout',[UserController::class,'logout'])->name('user.logout');
-
-
+    
 
 
     // Product route
@@ -53,15 +54,14 @@ Route::group(['prefix'=>'backend-portal'],function(){
      Route::put('/product/product-list/edit/{id}',[ProductController::class,'update'])->name('backend.product.update');
 
     //Category route
-     Route::get('/category',[CategoryController::class,'show'])->name('category.show');
-     Route::get('/category/category-list',[CategoryController::class,'list'])->name('Category.list');
+     Route::get('/product category',[CategoryController::class,'show'])->name('category.show');
      Route::get('/product category/add new product category',[CategoryController::class,'create'])->name('category.create');
      Route::post('/product category/add new product category',[CategoryController::class,'store'])->name('category.store');
 
      Route::get('/category/category-list/delete/{id}',[CategoryController::class,'delete'])->name('backend.category.delete');
-      Route::get('/category/category-list/edit/{id}',[CategoryController::class,'edit'])->name('backend.category.edit');
+     Route::get('/category/category-list/edit/{id}',[CategoryController::class,'edit'])->name('backend.category.edit');
      Route::put('/category/category-list/edit/{id}',[CategoryController::class,'update'])->name('backend.category.update');
-
+     Route::get('/category/category-list/view/{id}',[CategoryController::class,'details'])->name('backend.category.views');
 
 
     //Employees route
@@ -71,9 +71,9 @@ Route::group(['prefix'=>'backend-portal'],function(){
      Route::post('/employee/Create an Employee',[EmployeeController::class,'store'])->name('employee.store');
 
      Route::get('/employee/employee-list/delete/{id}',[EmployeeController::class,'delete'])->name('backend.employee.delete');
-      Route::get('/employee/employee-list/edit/{id}',[EmployeeController::class,'edit'])->name('backend.employee.edit');
-      Route::put('/employee/employee-list/edit/{id}',[EmployeeController::class,'update'])->name('backend.employee.update');
-
+     Route::get('/employee/employee-list/edit/{id}',[EmployeeController::class,'edit'])->name('backend.employee.edit');
+     Route::put('/employee/employee-list/edit/{id}',[EmployeeController::class,'update'])->name('backend.employee.update');
+     Route::get('/employee/employee-list/view/{id}',[EmployeeController::class,'view'])->name('backend.employee.view');
     //task route
      Route::get('/task',[TaskController::class,'show'])->name('task.show');
      Route::get('/task/task-list',[TaskController::class,'list'])->name('task.list');
@@ -98,17 +98,23 @@ Route::group(['prefix'=>'backend-portal'],function(){
     // Route::post('/customer/Create an task',[CustomerController::class,'store'])->name('customer.store');
 
 
+    //report days
+    Route::get('/reports', [ReportController::class, 'report'])->name('sales.report');
+
+
 });
 
 
 // frontend
-Route::get('/user', function () {
+Route::get('/user', function () 
+{
     return redirect()->route('user');
 });
 
 
 Route::group(['prefix'=>'user-portal'],function(){
-    Route::get('/user', function () {
+    Route::get('/user', function () 
+    {
         return view('frontend.index');
     })->name('user');
 });

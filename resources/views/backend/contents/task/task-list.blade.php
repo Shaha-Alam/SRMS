@@ -40,15 +40,16 @@
                     <!-- <th>{{$task->action}}</th> -->
                    <td>
                        
-                        <a class="btn btn-primary" href="">View</a>
-                        <a class="btn btn-info" href="">Edit</a> 
+                        <!-- <a class="btn btn-primary" href="">View</a>
+                        <a class="btn btn-info" href="{{route('backend.task.edit',$task->id)}}">Edit</a>  -->
                         <a class="btn btn-danger" href="{{route('backend.task.delete',$task->id)}}">Delete</a>
                     </td> 
+                   
 
                    
                 </tr>
                @endforeach
         
        </tbody>
-   s</table>
+   </table>
 @endsection

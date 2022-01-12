@@ -5,7 +5,7 @@
 
 
 
-<form class="needs-validation" action="{{route('backend.store')}}" method="post">
+<form class="needs-validation" action="{{route('employee.store')}}" method="post" enctype="multipart/form-data">
   @csrf
   <div class="form-colom">
      
@@ -31,7 +31,7 @@
 
     <div class="">
       <label for="validationCustom02">Email address</label>
-      <input type="text" name="email_address" class="form-control" id="validationCustom02" placeholder="Email address" required>
+      <input type="email" name="email_address" class="form-control" id="validationCustom02" placeholder="Email address" required>
     </div>
   
     <div class="mb-3 form-group">
@@ -51,7 +51,7 @@
 
     <div class="mb-3 form-group">
       <label for="validationCustom04">Birthday Date</label>
-      <input type="text" name="birthday_date" class="form-control" id="validationCustom04" placeholder="Birthday Date" required>
+      <input type="text" name="birth_date" class="form-control" id="validationCustom04" placeholder="Birthday Date" required>
     </div>
 
     <div class="mb-3 form-group">

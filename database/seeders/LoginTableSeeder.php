@@ -17,9 +17,9 @@ class LoginTableSeeder extends Seeder
     {
 
         User::create([
-        'name'=>'mehadi',
-        'email'=>'me@gmail.com',
-        'password'=>bcrypt('12345'),
+        'name'=>'shaha-alam',
+        'email'=>'admin@gmail.com',
+        'password'=>bcrypt('17203002'),
         'role'=>'admin'
         ]);
        

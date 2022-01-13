@@ -39,11 +39,32 @@
       <input type="text" name="contact_number" class="form-control" id="validationCustom03" placeholder="Contact Number" required>
     </div>
 
+    <!-- <div class="col-md-4">
+      <label>Gender</label>
+      </div>
+      <div class="col-md-8 form-group">
+      <fieldset class="form-group">
+       <select class="form-select" id="basicSelect" name="gender_id">
+        <option>Select Gender</option>
+      
+       </select>
+      </fieldset>
+    </div> -->
+
+    <!-- <div class="mb-3 form-group">
+      <label >Gender</label>
+                    <select name="gender" id="" required >
+                        <option value="Null" >select from here</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>  
+                    </select> 
+    </div>  -->
     <div class="mb-3 form-group">
-      <label for="validationCustom04">Gender</label>
-      <input type="text" name="gender" class="form-control" id="validationCustom04" placeholder="gender" required>
+      <label for="validationCustom05">Gender</label>
+      <input type="text" name="gender" class="form-control" id="validationCustom05" placeholder="gender" required>
     </div>
-    
+
     <div class="mb-3 form-group">
       <label for="validationCustom05">Salary</label>
       <input type="text" name="salary" class="form-control" id="validationCustom05" placeholder="BDT" required>

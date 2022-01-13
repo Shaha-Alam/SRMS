@@ -30,7 +30,7 @@
                     <td>{{$product->name}}</td>
                     <td>{{$product->generic}}</td>
                     <td>{{$product->category}}</td>
-                    <td>{{$product->image}}</td>
+                    <td><img src = "{{url('/uploads/'.$product->image)}}" alt="image" width="80px"></td>
                     <td>{{$product->quantity}}</td>
                     <td>{{$product->unit_price}}</td>
                     <td>{{$product->status}}</td>

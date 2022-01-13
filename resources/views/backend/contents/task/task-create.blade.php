@@ -1,11 +1,8 @@
 @extends('backend.master')
 
-
 @section('content')
 
-
-
-<form class="needs-validation" action="{{route('task.store')}}" method="post">
+<form class="needs-validation" action="{{route('task.store')}}" method="post" enctype="multipart/form-data">
   @csrf
   <div class="form-colom">
      
@@ -38,6 +35,7 @@
       <label for="validationCustom03">Product Image</label>
       <input requied name="product_image" type="file" multiple class="form-control-file" multiple class="form-control-file">
     </div>
+
 
     <div class="mb-3 form-group">
       <label for="validationCustom04">Total Price</label>

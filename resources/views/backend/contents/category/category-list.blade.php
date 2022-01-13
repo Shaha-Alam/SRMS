@@ -25,7 +25,7 @@
                   <td>
                     <a class="btn btn-primary" href="{{route('backend.category.views',$category->id)}}">View</a>
                     <a class="btn btn-info" href="{{route('backend.category.edit',$category->id)}}">Edit</a>
-                    <a class="btn btn-danger" href="{{route('backend.category.delete',$category->id)}}">Delete</a>
+                    <a class="btn btn-danger" onclick="return confirm('Are You Sure?')" href="{{route('backend.category.delete',$category->id)}}">Delete</a>
                   </td> 
                  </tr>
               @endforeach

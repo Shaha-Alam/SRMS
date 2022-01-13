@@ -14,9 +14,9 @@
             <th scope="col">Employee Name</th>
             <th scope="col">Employee Email</th>
             <th scope="col">Product Name</th>
-            <th scope="col">Product Image</th>
+            <th scope="col">Product image</th>
             <th scope="col">Total Price</th>
-            <th scope="col">Total Quantity</th>
+            <th scope="col">Target Quantity</th>
             <th scope="col">Start Date</th>
             <th scope="col">End Date</th>
             <th scope="col">Status</th>
@@ -33,9 +33,9 @@
                     <th>{{$task->employee_name}}</th>
                     <th>{{$task->employee_email}}</th>
                     <th>{{$task->product_name}}</th>
-                    <th>{{$task->product_image}}</th>
+                    <th><img src ="{{url('/uploads/'.$task->product_image)}}" alt="Product image" width="80px"></th>
                     <th>{{$task->total_price}}</th>
-                    <th>{{$task->total_quantity}}</th>
+                    <th>{{$task->target_quantity}}</th>
                     <th>{{$task->start_date}}</th>
                     <th>{{$task->end_date}}</th>
                     <th>{{$task->status}}</th>
@@ -44,7 +44,7 @@
                        
                         <!-- <a class="btn btn-primary" href="">View</a>
                         <a class="btn btn-info" href="{{route('backend.task.edit',$task->id)}}">Edit</a>  -->
-                        <a class="btn btn-danger" href="{{route('backend.task.delete',$task->id)}}">Delete</a>
+                        <a class="btn btn-danger" onclick="return confirm('Are You Sure?')" href="{{route('backend.task.delete',$task->id)}}">Delete</a>
                     </td> 
                    
 

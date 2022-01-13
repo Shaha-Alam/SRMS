@@ -25,18 +25,18 @@ class TaskController extends Controller
     {
 
 //  dd($request->all());
-// $file_name='';
-// //              step 1: check image exist in this request.
-//                  if($request->hasFile('image'))
-//                  {
-//                      // step 2: generate file name
-//                      $file_name=date('Ymdhms') .'.'. $request->file('image')->getClientOriginalExtension();
+$file_name='';
+             //  step 1: check image exist in this request.
+                 if($request->hasFile('product_image'))
+                 {
+                     // step 2: generate file name
+                     $file_name=date('Ymdhms') .'.'. $request->file('product_image')->getClientOriginalExtension();
 
-//                      //step 3 : store into project directory
+                     //step 3 : store into project directory
                  
-//                      $request->file('image')->storeAs('/uploads',$file_name);
+                     $request->file('product_image')->storeAs('/uploads',$file_name);
              
-//               }
+              }
         
        
             Task::create([
@@ -44,7 +44,7 @@ class TaskController extends Controller
                 'employee_name' => $request->employee_name,
                 'employee_email' => $request->employee_email,
                 'product_name' => $request->product_name,
-                'product_image' => $request->product_image,
+                'product_image' =>$file_name,
                 'total_price' =>$request->total_price,
                 'target_quantity' => $request->target_quantity,
                 'start_date' => $request->start_date,
@@ -74,19 +74,19 @@ class TaskController extends Controller
     public function update(Request $request,$id)
     {
         $tasks=task::find($id);
-//         if($tasks){
-//        $file_name=$tasks->image;
-// //              step 1: check image exist in this request.
-//                  if($request->hasFile('image'))
-//                  {
-//                      // step 2: generate file name
-//                      $file_name=date('Ymdhms') .'.'. $request->file('image')->getClientOriginalExtension();
+        if($tasks){
+       $file_name=$tasks->product_image;
+//              step 1: check image exist in this request.
+                 if($request->hasFile('product_image'))
+                 {
+                     // step 2: generate file name
+                     $file_name=date('Ymdhms') .'.'. $request->file('product_image')->getClientOriginalExtension();
 
-//                      //step 3 : store into project directory
+                     //step 3 : store into project directory
                  
-//                      $request->file('image')->storeAs('/uploads',$file_name);
+                     $request->file('product_image')->storeAs('/uploads',$file_name);
              
-//               }
+              }
         
     
             $tasks->update([
@@ -94,7 +94,7 @@ class TaskController extends Controller
                 'employee_name' => $request->employee_name,
                 'employee_email' => $request->employee_email,
                 'product_name' => $request->product_name,
-                'product_image' => $request->product_image,
+                'employee_image' =>$file_name,
                 'total_price' =>$request->total_price,
                 'target_quantity' => $request->target_quantity,
                 'start_date' => $request->start_date,
@@ -105,6 +105,7 @@ class TaskController extends Controller
     }
 
 }  
+}
 
 
 

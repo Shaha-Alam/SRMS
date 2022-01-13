@@ -32,6 +32,10 @@
       <dt class="col-sm-2">Phone Number:</dt>
       <dd class="col-sm-2">{{($employees->gender)}}</dd>
       </dl>
+      <dl class="row">
+      <dt class="col-sm-2">Action:</dt>
+      <dd class="col-sm-2">{{($employees->action)}}</dd>
+      </dl>
       
       
 @endsection

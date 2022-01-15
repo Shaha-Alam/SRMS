@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\SaleController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\LoginController;  
 use App\Http\Controllers\Backend\ReportController;
+use App\Http\Controllers\Backend\DashboardController;
 
 // frontend
 use App\Http\Controllers\frontend\HomeController;
@@ -29,9 +30,11 @@ use Illuminate\Support\Facades\Route;
 
 
     Route::group(['prefix'=>'backend-portal','middleware'=>'auth'],function(){
-    Route::get('/', function () {
-        return view('backend.contents.home');
-    })->name('backend');
+        Route::get('/',[DashboardController::class,'dashboard'])->name('backend');
+
+    // Route::get('/', function () {
+    //     return view('backend.contents.home');
+    // })->name('backend');
 
     // Route::get('/', function () {
     //     return redirect()->route('backend');

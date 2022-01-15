@@ -11,7 +11,9 @@
                         </div>
                         <div class="content">
                             <div class="text"> Number of Products </div>
-                            <div class="number count-to" data-from="0" data-to="20" data-speed="15" data-fresh-interval="20"></div>
+                            <div> 
+                                {{$product}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -33,7 +35,9 @@
                         </div>
                         <div class="content">
                             <div class="text"> Total Number of Employee </div>
-                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                            <div>
+                                {{$employee}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -43,8 +47,10 @@
                             <i class="material-icons">person_add</i>
                         </div>
                         <div class="content">
-                            <div class="text"> Total Number of Ative Employee</div>
-                            <div class="number count-to" data-from="0" data-to="225" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="text"> Total's Tasks</div>
+                            <div>
+                                {{$task}}
+                            </div>
                         </div>
                     </div>
                 </div>

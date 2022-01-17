@@ -12,8 +12,8 @@ class EmployeeController extends Controller
         $search = $request->query('search');
         if($search)
         {
-         $employees = Employee::where('designation', 'LIKE', '%' .$search. '%')
-         ->orWhere('phone_number', 'LIKE', '%' .$search. '%')->get();
+         $employees = Employee::where('employee_name', 'LIKE', '%' .$search. '%')
+         ->orWhere('contact_number', 'LIKE', '%' .$search. '%')->get();
          return view('backend.contents.employees.employees-list',compact('employees'));
         }
 

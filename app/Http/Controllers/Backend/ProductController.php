@@ -8,8 +8,15 @@ use App\Http\Controllers\Controller;
 class ProductController extends Controller
 {
     public function show(Request $request)
-    {
-   $products=Product::all();
+    {   
+        $search = $request->query('search');
+              if($search)
+             {
+                $products = Product::where('serial', 'LIKE', '%' .$search. '%')
+                ->orWhere('generic', 'LIKE', '%' .$search. '%')->get();
+               return view('backend.contents.products.products-list',compact('products'));
+             }
+        $products=Product::all();
    
         return view('backend.contents.products.products-list',compact('products'));
     }

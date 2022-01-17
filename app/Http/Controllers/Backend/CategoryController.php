@@ -9,6 +9,13 @@ class CategoryController extends Controller
 {
            public function show(Request $request)
            {
+              $search = $request->query('search');
+              if($search)
+             {
+                $categorys = Category::where('category_name', 'LIKE', '%' .$search. '%')
+                ->orWhere('description', 'LIKE', '%' .$search. '%')->get();
+               return view('backend.contents.category.category-list',compact('categorys'));
+             }
               $categorys=Category::all();
               return view('backend.contents.category.category-list',compact('categorys'));
            }

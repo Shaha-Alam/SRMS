@@ -5,17 +5,6 @@
 
 <a href="{{route('employee.create')}}" class="btn btn-success">Create New Employee</a>
 
-<!-- <----search---->
-<!-- <form class="row g-3">
-  <div class="col-auto">
-    <label for="inputsearch2" class="visually-hidden"></label>
-    <input type="search" class="form-control" id="inputsearch2" placeholder="search">
-  </div>
-  <div class="col-auto">
-    <button type="submit" class="btn btn-primary mb-3">search</button>
-  </div>
-</form> -->
-
 <!-- <------Search-----> 
 <form  action="">
 <div class="input-group rounded mt-3 mb-2">

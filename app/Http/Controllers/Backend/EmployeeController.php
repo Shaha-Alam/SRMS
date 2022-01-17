@@ -72,8 +72,10 @@ $file_name='';
     }
 
     // EDIT METHOD
+    
     public function edit($id)
     {
+        
        $employees=Employee::find($id);
     //    return redirect()->back()->with('success-message',Employee Created Successfully.');
     return view('backend.contents.employees.edit-employee',compact('employees'));  
@@ -82,6 +84,7 @@ $file_name='';
     // UPDATE METHOD
     public function update(Request $request,$id)
     {
+        // dd($request->all());
         $employees=Employee::find($id);
         
         if($employees){

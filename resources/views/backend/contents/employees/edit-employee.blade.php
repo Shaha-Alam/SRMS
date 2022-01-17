@@ -51,15 +51,15 @@
       <input type="text" name="salary" class="form-control" id="validationCustom05" value="{{$employees->salary}}"placeholder="BDT" >
     </div>
 
-    <!-- <div class="mb-3 form-group">
+    <div class="mb-3 form-group">
       <label for="validationCustom04">Birthday Date</label>
-      <input type="text" name="birthday_date" class="form-control" id="validationCustom04" value="{{$employees->birth_date}}"placeholder="Birthday Date" >
+      <input type="text" name="birth_date" class="form-control" id="validationCustom04" value="{{$employees->birth_date}}"placeholder="Birthday Date" >
     </div>
 
     <div class="mb-3 form-group">
       <label for="validationCustom04">Join Date</label>
       <input type="text" name="join_date" class="form-control" id="validationCustom04" value="{{$employees->join_date}}"placeholder="Join Date" >
-    </div> -->
+    </div>
     
 
   </div>

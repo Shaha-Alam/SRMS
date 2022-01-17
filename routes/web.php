@@ -30,6 +30,7 @@ use Illuminate\Support\Facades\Route;
 
 
     Route::group(['prefix'=>'backend-portal','middleware'=>'auth'],function(){
+        //dashboard create
         Route::get('/',[DashboardController::class,'dashboard'])->name('backend');
 
     // Route::get('/', function () {

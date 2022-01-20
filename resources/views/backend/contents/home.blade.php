@@ -10,8 +10,10 @@
                             <i class="material-icons">playlist_add_check</i>
                         </div>
                         <div class="content">
-                            <div class="text"> Number of Products </div>
-                            <div class="number count-to" data-from="0" data-to="20" data-speed="15" data-fresh-interval="20"></div>
+                            <div class="text"> Number of Product </div>
+                            <div>
+                                {{$product}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -33,7 +35,9 @@
                         </div>
                         <div class="content">
                             <div class="text"> Total Number of Employee </div>
-                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                            <div>
+                               
+                            </div>
                         </div>
                     </div>
                 </div>

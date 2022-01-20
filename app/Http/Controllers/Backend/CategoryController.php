@@ -7,8 +7,8 @@ use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
-           public function show(Request $request)
-           {
+      public function show(Request $request){
+
               $categorys=Category::all();
               return view('backend.contents.category.category-list',compact('categorys'));
            }
@@ -24,21 +24,7 @@ class CategoryController extends Controller
             public function store(Request $request)
         {
 
-            //dd($request->all());
-               //  $file_name = '';
-               // // step1: check request has file?
-               // if ($request->hasFile('employee_image')) {
-               //     //file is valid or not
-               //     $file = $request->file('employee_image');
-               //     if ($file->isValid()) {
-               //         //generate unique file name
-               //         $file_name = date('Ymdhms') . '.' . $file->getClientOriginalExtension();
-
-               //         //store image into local directory
-               //         $file->storeAs('employee', $file_name);
-               //     }
-    
-
+         
              Category::create([
                 'category_name'=>$request->category_name,
                 'description'=> $request->description
@@ -67,20 +53,6 @@ class CategoryController extends Controller
     public function update(Request $request,$id)
       {
         $categorys=Category::find($id);
-        
-//        $file_name=$categorys->image;
-// //              step 1: check image exist in this request.
-//                  if($request->hasFile('image'))
-//                  {
-//                      // step 2: generate file name
-//                      $file_name=date('Ymdhms') .'.'. $request->file('image')->getClientOriginalExtension();
-
-//                      //step 3 : store into project directory
-                 
-//                      $request->file('image')->storeAs('/uploads',$file_name);
-             
-//               }
-    
 
     
             $categorys->update([

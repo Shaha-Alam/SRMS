@@ -86,18 +86,6 @@ $file_name='';
                      $request->file('image')->storeAs('/uploads',$file_name);
              
               }
-          
-    
-
-
-            // $request->validate([
-            //     'name' => 'required|unique:products',
-            //     'generic' => 'required',
-            //     'category_id' => 'required',
-            //     'quantity' => 'required|gt:0',
-            //     'unit_price' => 'required|gt:0'
-            // ]);
-    
     
             $products->update([
                 'serial' => $request->serial,

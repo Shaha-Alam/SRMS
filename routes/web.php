@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\SaleController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\LoginController;  
 use App\Http\Controllers\Backend\ReportController;
+use App\Http\controllers\Backend\DashboardController;
 
 // frontend
 use App\Http\Controllers\frontend\HomeController;
@@ -24,14 +25,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 // backend
-    Route::get('backend-portal/login',[LoginController::class,'login'])->name('backend.login');
-    Route::post('backend-portal/login',[LoginController::class,'doLogin'])->name('backend.do.login');
+    Route::get('/login',[LoginController::class,'login'])->name('backend.login');
+    Route::post('/login',[LoginController::class,'doLogin'])->name('backend.do.login');
 
 
     Route::group(['prefix'=>'backend-portal','middleware'=>'auth'],function(){
-    Route::get('/', function () {
-        return view('backend.contents.home');
-    })->name('backend');
+    Route::get('/',[DashboardController::class,'dashboard'])->name('backend');
+    // Route::get('/', function () {
+    //     return view('backend.contents.home');
+    // })->name('backend');
 
     // Route::get('/', function () {
     //     return redirect()->route('backend');
@@ -119,3 +121,10 @@ Route::group(['prefix'=>'user-portal'],function(){
         return view('frontend.index');
     })->name('user');
 });
+
+//both  user
+//sales
+// Route::get('/sales-details/view/{id}', [SaleController::class, 'salesDetailsView'])->name('salesDetailsView.list')->middleware('auth');
+
+// //customers
+// Route::get('/customers', [CustomerController::class, 'customers'])->name('customers.list')->middleware('auth');

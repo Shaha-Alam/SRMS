@@ -51,19 +51,20 @@
       </fieldset>
     </div> -->
 
-    <!-- <div class="mb-3 form-group">
-      <label >Gender</label>
-                    <select name="gender" id="" required >
+    <div class="mb-3 form-group">
+      <label for="validationCustom05">Gender</label>
+ 
+                    <select class="form-control" id="validationCustom05" name="gender" >
                         <option value="Null" >select from here</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>  
                     </select> 
-    </div>  -->
-    <div class="mb-3 form-group">
+    </div> 
+    <!-- <div class="mb-3 form-group">
       <label for="validationCustom05">Gender</label>
       <input type="text" name="gender" class="form-control" id="validationCustom05" placeholder="gender" required>
-    </div>
+    </div> -->
 
     <div class="mb-3 form-group">
       <label for="validationCustom05">Salary</label>

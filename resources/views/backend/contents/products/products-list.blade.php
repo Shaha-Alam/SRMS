@@ -2,6 +2,8 @@
 
 
 @section('content')
+           
+
     <h1>Product List</h1>
 
     <a href="{{route('backend.create')}}" class="btn btn-success">Create an Product</a>

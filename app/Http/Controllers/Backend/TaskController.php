@@ -73,20 +73,20 @@ $file_name='';
     // UPDATE METHOD
     public function update(Request $request,$id)
     {
-        $tasks=task::find($id);
-        if($tasks){
-       $file_name=$tasks->product_image;
-//              step 1: check image exist in this request.
-                 if($request->hasFile('product_image'))
-                 {
-                     // step 2: generate file name
-                     $file_name=date('Ymdhms') .'.'. $request->file('product_image')->getClientOriginalExtension();
+//         $tasks=task::find($id);
+//         if($tasks){
+//        $file_name=$tasks->product_image;
+// //              step 1: check image exist in this request.
+//                  if($request->hasFile('product_image'))
+//                  {
+//                      // step 2: generate file name
+//                      $file_name=date('Ymdhms') .'.'. $request->file('product_image')->getClientOriginalExtension();
 
-                     //step 3 : store into project directory
+//                      //step 3 : store into project directory
                  
-                     $request->file('product_image')->storeAs('/uploads',$file_name);
+//                      $request->file('product_image')->storeAs('/uploads',$file_name);
              
-              }
+//               }
         
     
             $tasks->update([
@@ -105,7 +105,7 @@ $file_name='';
     }
 
 }  
-}
+
 
 
 

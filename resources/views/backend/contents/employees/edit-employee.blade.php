@@ -42,24 +42,29 @@
     </div>
 
     <div class="mb-3 form-group">
-      <label for="validationCustom04">Gender</label>
-      <input type="text" name="gender" class="form-control" id="validationCustom04" value="{{$employees->gender}}"placeholder="gender" >
+      <label for="validationCustom05">Gender</label>
+ 
+                    <select class="form-control" id="validationCustom05" name="gender" >
+                        <option value="Null" >select from here</option>
+                        <option value="Male" {{ $employees->gender == 'male' ? 'selected' : ''}}>Male</option>
+                        <option value="Female" {{ $employees->gender == 'female' ? 'selected' : ''}}>Female</option>
+                        <option value="Other" {{ $employees->gender == 'other' ? 'selected' : ''}}>Other</option>  
+                    </select> 
     </div>
-    
     <div class="mb-3 form-group">
       <label for="validationCustom05">Salary</label>
       <input type="text" name="salary" class="form-control" id="validationCustom05" value="{{$employees->salary}}"placeholder="BDT" >
     </div>
-
-    <!-- <div class="mb-3 form-group">
+  <div class="mb-3 form-group">
       <label for="validationCustom04">Birthday Date</label>
-      <input type="text" name="birthday_date" class="form-control" id="validationCustom04" value="{{$employees->birth_date}}"placeholder="Birthday Date" >
+      <input type="text" name="birth_date" class="form-control" id="validationCustom04" value="{{$employees->birth_date}}"placeholder="Birthday Date" >
     </div>
 
     <div class="mb-3 form-group">
       <label for="validationCustom04">Join Date</label>
       <input type="text" name="join_date" class="form-control" id="validationCustom04" value="{{$employees->join_date}}"placeholder="Join Date" >
-    </div> -->
+    </div>
+  
     
 
   </div>

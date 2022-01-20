@@ -9,14 +9,7 @@ class EmployeeController extends Controller
 {
     public function show(Request $request)
     {
-        $search = $request->query('search');
-        if($search)
-        {
-         $employees = Employee::where('designation', 'LIKE', '%' .$search. '%')
-         ->orWhere('phone_number', 'LIKE', '%' .$search. '%')->get();
-         return view('backend.contents.employees.employees-list',compact('employees'));
-        }
-
+       
         $employees=Employee::all();
         return view('backend.contents.employees.employees-list',compact('employees'));
     }
@@ -33,7 +26,7 @@ class EmployeeController extends Controller
     {
 
 
-// //  dd($request->all());
+//  dd($request->all());
 $file_name='';
                 //step 1: check image exist in this request.
                  if($request->hasFile('employee_image'))
@@ -82,6 +75,7 @@ $file_name='';
     // UPDATE METHOD
     public function update(Request $request,$id)
     {
+        //  dd($request->all());
         $employees=Employee::find($id);
         
         if($employees){

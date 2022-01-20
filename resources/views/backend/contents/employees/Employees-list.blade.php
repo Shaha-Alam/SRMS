@@ -5,32 +5,7 @@
 
 <a href="{{route('employee.create')}}" class="btn btn-success">Create New Employee</a>
 
-<!-- <----search---->
-<!-- <form class="row g-3">
-  <div class="col-auto">
-    <label for="inputsearch2" class="visually-hidden"></label>
-    <input type="search" class="form-control" id="inputsearch2" placeholder="search">
-  </div>
-  <div class="col-auto">
-    <button type="submit" class="btn btn-primary mb-3">search</button>
-  </div>
-</form> -->
 
-<!-- <------Search-----> 
-<form  action="">
-<div class="input-group rounded mt-3 mb-2">
-  <div class="form-outline">
-    <br><input name="search" type="search" id="form1" class="form-control" placeholder="Search" arial-level="search" arial-describedby="search-addon" />
-  </div>
-
-  <br>
-      <button type="submit" class="btn btn-primary mb-3">search</button>
-      <i class="fas fa-search"></i>
-  
-</div>
-</form>
-<!-- <------End Search----->
-<!-- <---- end search---->
     
     <table class="table">
         <thead>

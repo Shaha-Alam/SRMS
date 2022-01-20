@@ -10,8 +10,13 @@
                             <i class="material-icons">playlist_add_check</i>
                         </div>
                         <div class="content">
+<<<<<<< HEAD
                             <div class="text"> Number of Product </div>
                             <div>
+=======
+                            <div class="text"> Number of Products </div>
+                            <div> 
+>>>>>>> aa60ab785a7864c23e48e8e71a72b3ecee4e1773
                                 {{$product}}
                             </div>
                         </div>
@@ -36,7 +41,11 @@
                         <div class="content">
                             <div class="text"> Total Number of Employee </div>
                             <div>
+<<<<<<< HEAD
                                
+=======
+                                {{$employee}}
+>>>>>>> aa60ab785a7864c23e48e8e71a72b3ecee4e1773
                             </div>
                         </div>
                     </div>
@@ -47,8 +56,10 @@
                             <i class="material-icons">person_add</i>
                         </div>
                         <div class="content">
-                            <div class="text"> Total Number of Ative Employee</div>
-                            <div class="number count-to" data-from="0" data-to="225" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="text"> Total's Tasks</div>
+                            <div>
+                                {{$task}}
+                            </div>
                         </div>
                     </div>
                 </div>

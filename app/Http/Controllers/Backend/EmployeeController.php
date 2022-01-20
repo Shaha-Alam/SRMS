@@ -9,7 +9,18 @@ class EmployeeController extends Controller
 {
     public function show(Request $request)
     {
+<<<<<<< HEAD
        
+=======
+        $search = $request->query('search');
+        if($search)
+        {
+         $employees = Employee::where('employee_name', 'LIKE', '%' .$search. '%')
+         ->orWhere('contact_number', 'LIKE', '%' .$search. '%')->get();
+         return view('backend.contents.employees.employees-list',compact('employees'));
+        }
+
+>>>>>>> aa60ab785a7864c23e48e8e71a72b3ecee4e1773
         $employees=Employee::all();
         return view('backend.contents.employees.employees-list',compact('employees'));
     }
@@ -65,8 +76,10 @@ $file_name='';
     }
 
     // EDIT METHOD
+    
     public function edit($id)
     {
+        
        $employees=Employee::find($id);
     //    return redirect()->back()->with('success-message',Employee Created Successfully.');
     return view('backend.contents.employees.edit-employee',compact('employees'));  
@@ -75,7 +88,11 @@ $file_name='';
     // UPDATE METHOD
     public function update(Request $request,$id)
     {
+<<<<<<< HEAD
         //  dd($request->all());
+=======
+        // dd($request->all());
+>>>>>>> aa60ab785a7864c23e48e8e71a72b3ecee4e1773
         $employees=Employee::find($id);
         
         if($employees){

@@ -7,8 +7,20 @@ use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
+<<<<<<< HEAD
       public function show(Request $request){
 
+=======
+           public function show(Request $request)
+           {
+              $search = $request->query('search');
+              if($search)
+             {
+                $categorys = Category::where('category_name', 'LIKE', '%' .$search. '%')
+                ->orWhere('description', 'LIKE', '%' .$search. '%')->get();
+               return view('backend.contents.category.category-list',compact('categorys'));
+             }
+>>>>>>> aa60ab785a7864c23e48e8e71a72b3ecee4e1773
               $categorys=Category::all();
               return view('backend.contents.category.category-list',compact('categorys'));
            }

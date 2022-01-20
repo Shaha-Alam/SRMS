@@ -5,7 +5,15 @@
             <h1>Product Category List</h1>
 
             <a href="{{route('category.create')}}" class="btn btn-success">Add New Product Category</a>
+            
+<!-- <------Search-----> 
+<form  action="">
+<div class="input-group rounded mt-3 mb-2">
+  <div class="form-outline">
+    <br><input name="search" type="search" id="form1" class="form-control" placeholder="Search" arial-level="search" arial-describedby="search-addon" />
+  </div>
 
+<<<<<<< HEAD
             
           <!-- <------Search-----> 
           <form  action="">
@@ -22,6 +30,16 @@
           </form>
           <!-- <------End Search----->
           
+=======
+  <br>
+      <button type="submit" class="btn btn-primary mb-3">search</button>
+      <i class="fas fa-search"></i>
+  
+</div>
+</form>
+<!-- <------End Search----->
+    
+>>>>>>> aa60ab785a7864c23e48e8e71a72b3ecee4e1773
     <table class="table">
           <thead>
                 <tr>

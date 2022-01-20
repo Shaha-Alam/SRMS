@@ -55,7 +55,12 @@
       <label for="validationCustom05">Salary</label>
       <input type="text" name="salary" class="form-control" id="validationCustom05" value="{{$employees->salary}}"placeholder="BDT" >
     </div>
+<<<<<<< HEAD
   <div class="mb-3 form-group">
+=======
+
+    <div class="mb-3 form-group">
+>>>>>>> aa60ab785a7864c23e48e8e71a72b3ecee4e1773
       <label for="validationCustom04">Birthday Date</label>
       <input type="text" name="birth_date" class="form-control" id="validationCustom04" value="{{$employees->birth_date}}"placeholder="Birthday Date" >
     </div>
@@ -64,7 +69,10 @@
       <label for="validationCustom04">Join Date</label>
       <input type="text" name="join_date" class="form-control" id="validationCustom04" value="{{$employees->join_date}}"placeholder="Join Date" >
     </div>
+<<<<<<< HEAD
   
+=======
+>>>>>>> aa60ab785a7864c23e48e8e71a72b3ecee4e1773
     
 
   </div>

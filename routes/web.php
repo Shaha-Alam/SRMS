@@ -7,11 +7,11 @@ use App\Http\Controllers\Backend\SaleController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\LoginController;  
 use App\Http\Controllers\Backend\ReportController;
-<<<<<<< HEAD
+
 use App\Http\controllers\Backend\DashboardController;
-=======
-use App\Http\Controllers\Backend\DashboardController;
->>>>>>> aa60ab785a7864c23e48e8e71a72b3ecee4e1773
+
+// use App\Http\Controllers\Backend\DashboardController;
+
 
 // frontend
 use App\Http\Controllers\frontend\HomeController;

@@ -7,8 +7,8 @@
     <a href="{{route('task.create')}}" class="btn btn-success">Add New Task</a>
 
 
-<!-- <------Search-----> 
-<!-- <form  action="{{route('task.create')}}">
+<!-- Search -->
+<form  action="{{route('task.create')}}">
 <div class="input-group rounded mt-3 mb-2">
   <div class="form-outline">
     <input name="search" type="search" id="form1" class="form-control" placeholder="Search" arial-level="search" arial-describedby="search-addon" />
@@ -17,8 +17,8 @@
     <i class="fas fa-search"></i>
   </button>
 </div>
-</form> -->
-<!-- <------End Search----->
+</form>
+<!-- End Search -->
 
     
     <table class="table">

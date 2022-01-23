@@ -7,11 +7,11 @@ use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
-<<<<<<< HEAD
+
       public function show(Request $request){
 
-=======
-           public function show(Request $request)
+
+          
            {
               $search = $request->query('search');
               if($search)
@@ -20,27 +20,27 @@ class CategoryController extends Controller
                 ->orWhere('description', 'LIKE', '%' .$search. '%')->get();
                return view('backend.contents.category.category-list',compact('categorys'));
              }
->>>>>>> aa60ab785a7864c23e48e8e71a72b3ecee4e1773
+
               $categorys=Category::all();
               return view('backend.contents.category.category-list',compact('categorys'));
            }
 
-            public function create()
-           {
-               return view('backend.contents.category.category-create');
-            }
+         //    public function create()
+         //   {
+         //       return view('backend.contents.category.category-create');
+         //    }
 
 
             // product category post method
    
-            public function store(Request $request)
-        {
+      //       public function store(Request $request)
+      //   {
 
          
-             Category::create([
-                'category_name'=>$request->category_name,
-                'description'=> $request->description
-             ]);
+      //        Category::create([
+      //           'category_name'=>$request->category_name,
+      //           'description'=> $request->description
+      //        ]);
 
             return redirect()->back()->with('success-message', 'Category Created Successfully.');
         }
